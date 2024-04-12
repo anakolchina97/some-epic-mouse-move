@@ -1,0 +1,247 @@
+@font-face {
+  font-family: "Humane";
+  src: url("./fonts/Humane.woff2") format("woff2"),
+    url("/fonts/Humane.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Hunter";
+  src: url("./fonts/Hunter.woff2") format("woff2"),
+    url("/fonts/Hunter.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("./fonts/Ppneuemontreal.woff2") format("woff2"),
+    url("/fonts/Ppneuemontreal.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --dark: #252525;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "PP Neue Montreal", sans-serif;
+  background: var(--black);
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #5546ff;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Humane", sans-serif;
+  font-size: 60px;
+  color: #bfff00;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.links a {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.5em 1em;
+  font-size: 13px;
+  color: var(--white);
+  border: 1px solid var(--white);
+  border-radius: 20px;
+}
+
+.header {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header h1 {
+  text-transform: uppercase;
+  font-family: "Humane", sans-serif;
+  font-size: 45vw;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 100%;
+}
+
+section.website-content {
+  position: absolute;
+  top: 100vh;
+  width: 100%;
+  background: var(--dark);
+  padding: 6em 2em;
+}
+
+.tracker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 75%;
+  padding: 2em 0;
+}
+
+.emoji {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 350px;
+  background: rgb(85, 70, 255);
+  border-radius: 100%;
+}
+
+.emoji-face {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 225px;
+  height: 200px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.eyes,
+.mouth-wrapper {
+  flex: 1;
+}
+
+.eyes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.eyes img {
+  width: 100px;
+  height: 100px;
+  animation: rotateEyes 4s linear infinite;
+}
+
+.mouth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.mouth {
+  --size: 40px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50px;
+  background: #000;
+  animation: wounderFace 2s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+}
+
+.section-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.section-header h2 {
+  font-family: "Humane", sans-serif;
+  text-transform: uppercase;
+  font-size: 10vw;
+  font-weight: 400;
+  color: #fff;
+  line-height: 100%;
+}
+
+.section-header p {
+  font-size: 13px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: right;
+  width: 25%;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2em;
+  margin: 2em 0;
+}
+
+.row img {
+  height: 600px;
+}
+
+@keyframes rotateEyes {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wounderFace {
+  0% {
+    height: 40px;
+  }
+  50% {
+    height: 80px;
+  }
+  100% {
+    height: 40px;
+  }
+}
